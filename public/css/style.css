@@ -1,0 +1,15 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #2d2d2d; }
+
+h1 {
+  position: relative;
+  margin: 1.6em;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: .1rem; }
+  h1 span {
+    font-weight: lighter; }
+    h1 span span.underscore {
+      color: #FF002D; }

@@ -9,9 +9,9 @@ gulp.task('connect', function(){
   });
 });
 
-// keeps gulp from crashing for scss errors
+// keeps gulp from crashing for sass errors
 gulp.task('sass', function () {
-  return gulp.src('./sass/*.scss')
+  return gulp.src('./sass/*.sass')
       .pipe(sass({ errLogToConsole: true }))
       .pipe(gulp.dest('./public/css'));
 });
@@ -22,8 +22,13 @@ gulp.task('livereload', function (){
 });
 
 gulp.task('watch', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
+  gulp.watch('./sass/**/*.sass', ['sass']);
   gulp.watch('./public/**/*', ['livereload']);
 });
 
 gulp.task('default', ['connect', 'watch', 'sass']);
+
+function onError(err) {
+  console.log(err);
+  this.emit('end');
+}
