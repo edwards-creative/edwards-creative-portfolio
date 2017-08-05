@@ -1,0 +1,29 @@
+#header--nav-fixed
+    display: block
+    margin: 0 auto
+    max-width: 100%
+    height: 50px
+    padding: 5% 0
+    .nav--brand-static
+        font-size: 1.2em
+        font-weight: 600
+        text-align: left
+        padding: 0
+        margin: 0
+        .text--secondary-thin
+            font-weight: 200
+        &:after
+            content: '_'
+            color: $highlight_color
+            font-weight: 200
+    .nav--list-inline
+        margin: .2em 0
+        display: inline-block
+        padding: 0
+        float: right
+        .nav--list-items
+            list-style-type: none
+            display: inline-block
+            text-align: right
+            &:nth-child(1n+1)
+                margin-left: 20px

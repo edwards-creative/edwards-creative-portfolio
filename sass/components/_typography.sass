@@ -1,0 +1,22 @@
+/* Main typography requirements */
+
+h1, h2
+    display: inline-block
+    font-weight: 200
+    letter-spacing: .1em
+
+article + p
+    font-size: 1.3em
+    font-weight: 200
+    line-height: 1.7rem
+    letter-spacing: .01em
+    margin: 0 0 2rem 0
+
+.block-section
+    h2
+        font-size: 1.8em
+        text-transform: uppercase
+        margin-bottom: 2rem
+        &::after
+            content: '_'
+            color: $highlight_color

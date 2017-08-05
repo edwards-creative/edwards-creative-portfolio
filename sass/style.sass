@@ -1,20 +1,44 @@
-$dark-color: #2d2d2d
-$background-gradient: linear-gradient(to bottom, rgba(71, 71 ,71 , 1) 0%, rgba(45, 45 , 45, 1) 100%)
-$white: #ffffff
-$hightlight-red: #FF002D
+@import "modules/_colors.sass"
+@import "components/_typography.sass"
+@import "components/_layout.sass"
+@import "vendor/_reset.sass"
+@import "components/_header.sass"
 
 body
-    font-family: Arial, sans-serif
     background: $dark-color
-
-h1
-    position: relative
-    margin: 1.6em
+    font-family: Arial, sans-serif
+    margin: 0 auto
     color: $white
-    text-transform: uppercase
-    font-weight: bolder
-    letter-spacing: .1rem
-    span
-        font-weight: lighter
-        span.underscore
-            color: $hightlight-red
+    max-width: 80%
+    box-sizing: border-box
+
+.section-divider
+    color: $highlight_color
+    font-size: 4em
+    text-align: center
+    display: inline-block
+    width: 100%
+
+.contact-section
+    display: inline-block
+    max-width: 66%
+    h3
+        font-size: 2em
+        font-weight: 100
+        line-height: 2.8rem
+        letter-spacing: .01em
+        margin: 0 0 2rem 0
+
+.about--section-content
+    width: 60%
+    max-width: 60%
+    display: inline-block
+
+.about-section
+    display: inline-block
+    p
+        font-size: 1.3em
+        font-weight: 200
+        line-height: 1.7rem
+        letter-spacing: .01em
+        margin: 0 0 2rem 0
