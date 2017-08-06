@@ -1,6 +1,6 @@
 /* Document Layout Elements */
 
-.about--section-content
+.section-content
     width: 60%
     max-width: 60%
     display: inline-block
@@ -19,19 +19,22 @@
     figure:first-of-type
         margin-right: 1.5rem
 
-.contact-section
-    display: inline-block
-    max-width: 66%
 
 .image-large
+    height: auto
+    width: auto
     max-width: 66%
+    max-height: 66%
     min-width: 33%
     display: inline-block
     overflow: hidden
     margin: 0 0 1rem 0
 
 .image-small
+    height: auto
+    width: auto
     max-width: 33%
+    max-height: 33%
     min-width: 17.5%
     display: inline-block
     overflow: hidden
@@ -43,28 +46,9 @@
 .float-left
     float: left
 
-.contact-form
-    width: 33%
-    display: inline-block
-    position: relative
-    box-sizing: border-box
-    input, textarea
-        font-size: 1rem
-        color: $header-text
-        width: 100%
-        padding: .7rem
-        margin: .3rem
-        background: lighten($dark-color, 10%)
-        border: none
-    button
-        font-size: 1rem
-        text-transform: uppercase
-        color: $white
-        display: block
-        padding: .7rem
-        margin: .3rem auto
-        width: 40%
-        background: $highlight_color
-        border: none
-        &:hover
-            background: darken($highlight_color, 10%)
+.clearfix:after
+    content: " "
+    visibility: hidden
+    display: block
+    height: 0
+    clear: both
