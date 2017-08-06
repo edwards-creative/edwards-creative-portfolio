@@ -1,36 +1,70 @@
 /* Document Layout Elements */
+
+.about--section-content
+    width: 60%
+    max-width: 60%
+    display: inline-block
+
 .block-section
     color: $header-text
     margin: 0 auto
     max-width: 100%
+    padding: 2.5%
 
 .block--section-image
     display: flex
     flex-direction: row
     justify-content: space-between
 
+    figure:first-of-type
+        margin-right: 1.5rem
+
+.contact-section
+    display: inline-block
+    max-width: 66%
+
 .image-large
-    width: 66%
     max-width: 66%
     min-width: 33%
     display: inline-block
     overflow: hidden
-    box-sizing: border-box
-    margin: 0 0 1% 0
-    background-position: center center
+    margin: 0 0 1rem 0
 
 .image-small
-    width: 33%
     max-width: 33%
     min-width: 17.5%
     display: inline-block
     overflow: hidden
-    box-sizing: border-box
-    margin: 0 0 1% 0
-
+    margin: 0 0 1rem 0
 
 .float-right
     float: right
 
 .float-left
     float: left
+
+.contact-form
+    width: 33%
+    display: inline-block
+    position: relative
+    box-sizing: border-box
+    input, textarea
+        font-size: 1rem
+        color: $header-text
+        width: 100%
+        padding: .7rem
+        margin: .3rem
+        background: lighten($dark-color, 10%)
+        border: none
+    button
+        font-size: 1rem
+        text-transform: uppercase
+        color: $white
+        display: block
+        padding: .7rem
+        margin: .3rem auto
+        width: 40%
+        background: $highlight_color
+        border: none
+        &:hover
+            background: darken($highlight_color, 10%)

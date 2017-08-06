@@ -3,6 +3,12 @@
 @import "components/_layout.sass"
 @import "vendor/_reset.sass"
 @import "components/_header.sass"
+@import "components/_about.sass"
+@import "components/_footer.sass"
+@import "components/_sprites.sass"
+
+*
+    box-sizing: border-box
 
 body
     background: $dark-color
@@ -10,35 +16,10 @@ body
     margin: 0 auto
     color: $white
     max-width: 80%
-    box-sizing: border-box
 
 .section-divider
-    color: $highlight_color
-    font-size: 4em
+    color: opacify($highlight-color, 0)
+    // font-size: 4em
     text-align: center
     display: inline-block
     width: 100%
-
-.contact-section
-    display: inline-block
-    max-width: 66%
-    h3
-        font-size: 2em
-        font-weight: 100
-        line-height: 2.8rem
-        letter-spacing: .01em
-        margin: 0 0 2rem 0
-
-.about--section-content
-    width: 60%
-    max-width: 60%
-    display: inline-block
-
-.about-section
-    display: inline-block
-    p
-        font-size: 1.3em
-        font-weight: 200
-        line-height: 1.7rem
-        letter-spacing: .01em
-        margin: 0 0 2rem 0

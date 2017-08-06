@@ -1,0 +1,38 @@
+.footer-nav-block
+    background: darken($dark-color, 3%)
+    left: 0
+    display: inline-block
+    width: 100vw
+    position: relative
+    left: 50%
+    right: 50%
+    margin-left: -50vw
+    margin-right: -50vw
+
+#footer--nav-fixed
+    display: block
+    margin: 0 auto
+    max-width: 80%
+    height: 4em
+    color: $paragraph-text
+    padding: 5% 0
+    h4
+        display: inline-block
+        color: $paragraph-text
+        margin-top: .8em
+        &::before
+            content: '© '
+    .nav--list-inline
+        list-style-type: none
+        h5
+            display: inline-block
+            &::after
+                content: '_'
+                color: $highlight-color
+        .nav--list-icon
+            margin: .2em 0
+            display: inline-block
+            position: relative
+            &:nth-child(1n+1)
+                margin-left: 1.5em
+                margin-bottom: -.5em
