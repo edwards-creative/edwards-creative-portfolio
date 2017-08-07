@@ -4,6 +4,10 @@
     position: relative
     box-sizing: border-box
     clear: both
+
+    textarea
+        resize: none
+
     input, textarea
         font-size: 1rem
         color: $header-text
@@ -12,6 +16,11 @@
         margin: .3rem
         background: lighten($dark-color, 10%)
         border: none
+
+        &:focus
+            outline: none
+            border-right: 2px solid $highlight-color
+
     button
         font-size: 1rem
         text-transform: uppercase
@@ -22,5 +31,13 @@
         width: 40%
         background: $highlight_color
         border: none
+
         &:hover
             background: darken($highlight_color, 10%)
+
+
+@media (max-width: 859px)
+    .contact-form
+        width: 100%
+        display: block
+        position: relative

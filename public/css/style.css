@@ -4,7 +4,9 @@
 h1, h2 {
   display: inline-block;
   font-weight: 200;
+  line-height: 1.5em;
   letter-spacing: 0.1em;
+  color: #dbdbdb;
 }
 
 .block-section h2 {
@@ -17,23 +19,43 @@ h1, h2 {
   color: #ff0033;
 }
 
-.about-section, .contact-section {
+.about-section {
   display: inline-block;
 }
-.about-section p, .about-section h3, .contact-section p, .contact-section h3 {
+.about-section p, .about-section h3 {
   font-size: 1.3em;
-  font-weight: 200;
+  font-weight: 100;
   color: #9B9B9B;
-  line-height: 1.7rem;
-  letter-spacing: 0.01em;
+  line-height: 2rem;
+  letter-spacing: 0.02em;
   margin: 0 0 2rem 0;
 }
 
+.noselect {
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (max-width: 481px) {
+  .about-section p, .about-section h3 {
+    font-size: 1em;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+}
 /* Document Layout Elements */
 .section-content {
+  padding: 1.5rem;
   width: 60%;
   max-width: 60%;
+  background: #232323;
   display: inline-block;
+  border-right: 2px solid #ff0033;
+  margin-bottom: 2em;
 }
 
 .block-section {
@@ -54,24 +76,28 @@ h1, h2 {
 
 .image-large {
   height: auto;
-  width: auto;
+  width: 66%;
   max-width: 66%;
-  max-height: 66%;
-  min-width: 33%;
   display: inline-block;
   overflow: hidden;
   margin: 0 0 1rem 0;
 }
 
-.image-small {
+.image-small, .profile-image {
   height: auto;
-  width: auto;
+  width: 33%;
   max-width: 33%;
-  max-height: 33%;
-  min-width: 17.5%;
   display: inline-block;
   overflow: hidden;
   margin: 0 0 1rem 0;
+}
+
+.first-image, .second-image {
+  background: url("../img/image-1-min.jpg") no-repeat center center;
+  background-size: cover;
+  height: 300px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .float-right {
@@ -90,6 +116,32 @@ h1, h2 {
   clear: both;
 }
 
+.section-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 481px) {
+  .section-content {
+    display: inline-block;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .image-large {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .image-small, .profile-image {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+  }
+}
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
  * ========================================================================== */
@@ -3409,7 +3461,7 @@ template {
   margin: 0 auto;
   max-width: 95%;
   height: 4em;
-  color: #9B9B9B;
+  color: #dbdbdb;
   padding: 5% 0 15% 0;
 }
 #header--nav-fixed .nav--brand-static {
@@ -3441,7 +3493,45 @@ template {
 #header--nav-fixed .nav--list-inline .nav--list-items:nth-child(1n+1) {
   margin-left: 20px;
 }
+#header--nav-fixed .nav--list-inline .nav--list-items-toggle {
+  display: none;
+}
 
+@media (max-width: 481px) {
+  #header--nav-fixed {
+    display: block;
+    margin: 0 auto;
+    max-width: 95%;
+  }
+  #header--nav-fixed .nav--brand-static {
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+  }
+  #header--nav-fixed .nav--brand-static .text--secondary-thin {
+    font-weight: 200;
+  }
+  #header--nav-fixed .nav--brand-static:after {
+    content: "_";
+    color: #ff0033;
+    font-weight: 200;
+  }
+  #header--nav-fixed .nav--list-inline {
+    margin: 0;
+    display: inline-block;
+  }
+  #header--nav-fixed .nav--list-inline .nav--list-items {
+    display: none;
+  }
+  #header--nav-fixed .nav--list-inline .nav--list-items-toggle {
+    font-size: 1.5em;
+    list-style-type: none;
+    display: inline-block;
+    text-align: right;
+  }
+}
 .footer-nav-block {
   background: #232323;
   left: 0;
@@ -3458,7 +3548,7 @@ template {
 #footer--nav-fixed {
   display: block;
   margin: 0 auto;
-  max-width: 80%;
+  max-width: 75%;
   color: #9B9B9B;
   padding: 5% 0 1% 0;
 }
@@ -3492,6 +3582,12 @@ template {
   margin-bottom: -0.5em;
 }
 
+@media (max-width: 481px) {
+  h4 {
+    display: block;
+    text-align: center;
+  }
+}
 .tw, .ldin, .git {
   cursor: pointer;
   display: inline-block;
@@ -3528,6 +3624,9 @@ template {
   box-sizing: border-box;
   clear: both;
 }
+.contact-form textarea {
+  resize: none;
+}
 .contact-form input, .contact-form textarea {
   font-size: 1rem;
   color: #dbdbdb;
@@ -3536,6 +3635,10 @@ template {
   margin: 0.3rem;
   background: #454545;
   border: none;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none;
+  border-right: 2px solid #ff0033;
 }
 .contact-form button {
   font-size: 1rem;
@@ -3552,6 +3655,13 @@ template {
   background: #cc0029;
 }
 
+@media (max-width: 859px) {
+  .contact-form {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -3564,9 +3674,8 @@ body {
   max-width: 80%;
 }
 
-.section-divider {
-  color: #ff0033;
-  text-align: center;
-  display: inline-block;
-  width: 100%;
+@media (max-width: 481px) {
+  body {
+    max-width: 90%;
+  }
 }

@@ -14,7 +14,7 @@
 #footer--nav-fixed
     display: block
     margin: 0 auto
-    max-width: 80%
+    max-width: 75%
     color: $paragraph-text
     padding: 5% 0 1% 0
     h4
@@ -39,3 +39,9 @@
             &:nth-child(1n+1)
                 margin-left: 1.5em
                 margin-bottom: -.5em
+
+@media (max-width: 481px)
+    #footer--nav-fixed
+    h4
+        display: block
+        text-align: center

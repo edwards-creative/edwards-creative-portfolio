@@ -3,23 +3,43 @@
 h1, h2
     display: inline-block
     font-weight: 200
+    line-height: 1.5em
     letter-spacing: .1em
+    color: $header-text
 
 .block-section
     h2
         font-size: 1.8em
         text-transform: uppercase
         margin-bottom: 2rem
+
         &::after
             content: '_'
             color: $highlight-color
 
-.about-section, .contact-section
+.about-section
     display: inline-block
+
     p, h3
         font-size: 1.3em
-        font-weight: 200
+        font-weight: 100
         color: $paragraph-text
-        line-height: 1.7rem
-        letter-spacing: .01em
+        line-height: 2rem
+        letter-spacing: .02em
         margin: 0 0 2rem 0
+.noselect
+    cursor: default
+    -webkit-touch-callout: none /* iOS Safari */
+    -webkit-user-select: none /* Safari */
+    -moz-user-select: none /* Firefox */
+    -ms-user-select: none /* Internet Explorer/Edge */
+    user-select: none /* Non-prefixed version, currently supported by Chrome and Opera */
+
+
+@media (max-width: 481px)
+
+    .about-section
+        p, h3
+            font-size: 1em
+            line-height: 1.6
+            letter-spacing: 0.01em
