@@ -3,20 +3,29 @@
 /* Main typography requirements */
 h1, h2 {
   display: inline-block;
-  font-weight: 200;
+  text-transform: uppercase;
   line-height: 1.5em;
   letter-spacing: 0.1em;
   color: #dbdbdb;
+  -webkit-font-smoothing: antialiased;
 }
 
-.block-section h2 {
+.block-section .section-header {
   font-size: 1.8em;
+  font-weight: 200;
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
-.block-section h2::after {
-  content: "_";
+.block-section .section-header::after {
+  content: " | ";
   color: #ff0033;
+}
+
+.main-h2-descriptor {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #6b6b6b;
 }
 
 .about-section {
@@ -45,6 +54,10 @@ h1, h2 {
     font-size: 1em;
     line-height: 1.6;
     letter-spacing: 0.01em;
+  }
+
+  .main-h2-descriptor {
+    font-size: 1.4em;
   }
 }
 /* Document Layout Elements */
@@ -75,21 +88,23 @@ h1, h2 {
 }
 
 .image-large {
-  height: auto;
+  height: 300px;
   width: 66%;
   max-width: 66%;
   display: inline-block;
   overflow: hidden;
   margin: 0 0 1rem 0;
+  z-index: 0;
 }
 
-.image-small, .profile-image {
-  height: auto;
+.image-small {
+  height: 300px;
   width: 33%;
   max-width: 33%;
   display: inline-block;
   overflow: hidden;
   margin: 0 0 1rem 0;
+  z-index: 0;
 }
 
 .first-image, .second-image {
@@ -98,6 +113,12 @@ h1, h2 {
   height: 300px;
   max-width: 100%;
   max-height: 100%;
+  z-index: -1;
+}
+
+.profile-image {
+  background: url("../img/image-1-min.jpg") no-repeat center center;
+  background-size: cover;
 }
 
 .float-right {
@@ -116,30 +137,38 @@ h1, h2 {
   clear: both;
 }
 
-.section-content {
-  width: 100%;
-  max-width: 100%;
-}
+@media (max-width: 859px) {
+  .section-content {
+    width: 100%;
+    max-width: 100%;
+  }
 
+  .block--section-image {
+    display: block;
+  }
+
+  .image-large {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .image-small {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .profile-image {
+    width: 100%;
+    max-width: 100%;
+    float: none;
+  }
+}
 @media (max-width: 481px) {
   .section-content {
     display: inline-block;
     padding: 1.5rem;
     width: 100%;
     max-width: 100%;
-  }
-
-  .image-large {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .image-small, .profile-image {
-    height: auto;
-    width: 100%;
-    max-width: 100%;
-    display: block;
   }
 }
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -3462,7 +3491,7 @@ template {
   max-width: 95%;
   height: 4em;
   color: #dbdbdb;
-  padding: 5% 0 15% 0;
+  padding: 5% 0 5% 0;
 }
 #header--nav-fixed .nav--brand-static {
   font-size: 1.4em;
@@ -3497,7 +3526,7 @@ template {
   display: none;
 }
 
-@media (max-width: 481px) {
+@media (max-width: 649px) {
   #header--nav-fixed {
     display: block;
     margin: 0 auto;
@@ -3506,17 +3535,6 @@ template {
   #header--nav-fixed .nav--brand-static {
     font-size: 1.2em;
     font-weight: 600;
-    text-align: center;
-    padding: 0;
-    margin: 0 auto;
-  }
-  #header--nav-fixed .nav--brand-static .text--secondary-thin {
-    font-weight: 200;
-  }
-  #header--nav-fixed .nav--brand-static:after {
-    content: "_";
-    color: #ff0033;
-    font-weight: 200;
   }
   #header--nav-fixed .nav--list-inline {
     margin: 0;
@@ -3538,6 +3556,7 @@ template {
   display: inline-block;
   width: 100vw;
   position: relative;
+  padding: 5% 0 2% 0;
   left: 50%;
   right: 50%;
   margin-top: 2em;
@@ -3550,42 +3569,71 @@ template {
   margin: 0 auto;
   max-width: 75%;
   color: #9B9B9B;
-  padding: 5% 0 1% 0;
 }
 #footer--nav-fixed h4 {
   font-size: 0.8em;
   display: inline-block;
-  font-weight: 100;
+  font-weight: 400;
   color: #9B9B9B;
-  margin-top: 3em;
+  margin: 0;
 }
 #footer--nav-fixed h4::before {
   content: "© ";
 }
+#footer--nav-fixed hr {
+  display: none;
+}
 #footer--nav-fixed .nav--list-inline {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
-#footer--nav-fixed .nav--list-inline h5 {
+#footer--nav-fixed .nav--list-inline .nav--list-header {
+  display: inline-block;
+  margin: 0 1.5em 0 0;
+}
+#footer--nav-fixed .nav--list-inline a {
+  text-decoration: none;
+}
+#footer--nav-fixed .nav--list-inline .social-icons {
+  height: 30px;
+  margin-top: 15px;
   display: inline-block;
 }
-#footer--nav-fixed .nav--list-inline h5::after {
-  content: "_";
-  color: #ff0033;
+#footer--nav-fixed .nav--list-inline .social-icons a:nth-of-type(n+2) {
+  margin-left: 1.5em;
+  margin-bottom: -0.5em;
 }
 #footer--nav-fixed .nav--list-inline .nav--list-icon {
   margin: 0.2em 0;
   display: inline-block;
   position: relative;
 }
-#footer--nav-fixed .nav--list-inline .nav--list-icon:nth-child(1n+1) {
-  margin-left: 1.5em;
-  margin-bottom: -0.5em;
-}
 
-@media (max-width: 481px) {
-  h4 {
+@media (max-width: 635px) {
+  #footer--nav-fixed h4, #footer--nav-fixed .nav--list-header {
     display: block;
     text-align: center;
+  }
+  #footer--nav-fixed hr {
+    display: block;
+    border: 1px solid #383838;
+    width: 80%;
+    margin: 3em auto 0 auto;
+  }
+  #footer--nav-fixed .nav--list-inline {
+    display: block;
+    text-align: center;
+    float: none;
+    padding-left: 0;
+  }
+  #footer--nav-fixed .nav--list-inline .social-icons {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #footer--nav-fixed .nav--list-inline .social-icons a:nth-of-type(n+2) {
+    margin-left: 1.5em;
   }
 }
 .tw, .ldin, .git {
