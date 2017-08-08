@@ -1,73 +1,70 @@
-.footer-nav-block
-    background: darken($dark-color, 3%)
+#footer-nav-fixed
+    margin-top: 4em
+    height: auto
+    background: #232323
     left: 0
-    display: inline-block
-    width: 100vw
-    position: relative
-    padding: 5% 0 2% 0
-    left: 50%
-    right: 50%
-    margin-top: 2em
-    margin-left: -50vw
-    margin-right: -50vw
-
-#footer--nav-fixed
-    display: block
-    margin: 0 auto
-    max-width: 75%
-    color: $paragraph-text
-    h4
+    width: 100%
+    position: absolute
+    padding: 2rem 0 4rem 0
+    .copyright-text
         font-size: .8em
         display: inline-block
         font-weight: 400
         color: $paragraph-text
         margin: 0
-        &::before
-            content: '© '
+
+.footer-nav-block
+    display: flex
+    flex-direction: row-reverse
+    justify-content: space-between
+    align-items: baseline
+    text-transform: uppercase
+    margin: 0 auto
+    max-width: 75%
+    color: $paragraph-text
     hr
         display: none
-    .nav--list-inline
+    .social-list-block
         list-style-type: none
         margin: 0
         padding: 0
-        .nav--list-header
+        .social-list-header
             display: inline-block
             margin: 0 1.5em 0 0
-        a
-            text-decoration: none
-        .social-icons
-            height: 30px
-            margin-top: 15px
-            display: inline-block
-            a:nth-of-type(n+2)
-                margin-left: 1.5em
-                margin-bottom: -.5em
-        .nav--list-icon
-            margin: .2em 0
-            display: inline-block
-            position: relative
+            &::after
+                content: ' |'
+                color: $highlight-color
 
+        .social-icons
+            display: inline-block
+            li:nth-of-type(n+2)
+                margin-left: 1.5em
+            a
+                height: 30px
+                width: 30px
+                text-decoration: none
+                margin-bottom: -.5em
 
 @media (max-width: 635px)
-    #footer--nav-fixed
-        h4, .nav--list-header
+    #footer-nav-fixed
+        .footer-nav-block
+            display: block
+            margin: 0 auto
+
+        .copyright-text, .social-list-header
+            margin: 0 auto 1.2rem auto
             display: block
             text-align: center
-
         hr
             display: block
             border: 1px solid lighten($dark-color, 5%)
             width: 80%
-            margin: 3em auto 0 auto
+            margin: 2rem auto 2rem auto
 
-        .nav--list-inline
+        .social-list-block
             display: block
             text-align: center
-            float: none
-            padding-left: 0
+            margin: 0 auto
             .social-icons
-                display: block
-                text-align: center
-                margin: 0 auto
                 a:nth-of-type(n+2)
                     margin-left: 1.5em
