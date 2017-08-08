@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400" rel="stylesheet">
+
+    <link rel="stylesheet" href="">
+
     <title> Edwards Creative | Portfolio</title>
 </head>
 
@@ -15,18 +18,27 @@
         <nav id="header--nav-fixed">
             <h1 class="nav--brand-static noselect">Edwards<span class="text--secondary-thin">Creative</span></h1>
             <ul class="nav--list-inline noselect">
-                <li class="nav--list-items-toggle">☰</li>
-                <li class="nav--list-items">Work</li>
-                <li class="nav--list-items">About</li>
-                <li class="nav--list-items">Contact</li>
+                <li id="nav-toggle" class="nav--list-items-toggle">☰</li>
+                <li class="nav--list-items work-btn">Work</li>
+                <li class="nav--list-items about-btn">About</li>
+                <li class="nav--list-items contact-btn">Contact</li>
             </ul>
+
+        </nav>
+        <nav id="drop-down-nav">
+            <ul class="nav-list-dropdown noselect">
+                <li class="nav-list-dropdown-items work-btn">Work</li>
+                <li class="nav-list-dropdown-items about-btn">About</li>
+                <li class="nav-list-dropdown-items contact-btn">Contact</li>
+            </ul>
+
         </nav>
     </header>
 
     <section class="block-section">
-        <h2 class="main-h2-descriptor"><em>Designer, Front-End Developer &amp; Digital Marketer</em></h2>
+        <h2 class="main-h2-descriptor noselect"><em>Front-End Developer, Designer &amp; Digital Marketer</em></h2>
         <div class="section--header-main noselect">
-            <h2 class="section-header">Work</h2>
+            <h2 id="work-section" class="section-header">Work</h2>
         </div>
         <div class="block--section-image">
             <figure class="image-large first-image"></figure>
@@ -46,7 +58,7 @@
 
     <section class="block-section">
         <div class="section--header-main noselect">
-            <h2 class="section-header">About</h2>
+            <h2 id="about-section"  class="section-header">About</h2>
         </div>
         <article class="about-section">
             <div class="block--section-image-profile">
@@ -66,12 +78,20 @@
 
     <section class="block-section">
         <div class="section--header-main noselect">
-            <h2 class="section-header">Let's Chat</h2>
+            <h2 id="contact-section"  class="section-header">Let's Chat</h2>
         </div>
         <article class="about-section">
             <div class="block--section-image-profile">
                 <div class="section-content">
                     <p>Phone, email, or in person. Let’s discuss your next project and how I can help bring your ideas to life.</p>
+                    <span class="social-icons">
+                        <li class="social-icons-list ldin"><a href=""></a></li>
+
+                        <li class="social-icons-list git"><a href=""></a></li>
+
+                        <li class="social-icons-list tw"><a href=""></a></li>
+                    </span>
+                </ul>
                 </div>
                 <form class="contact-form float-right clearfix" action="#">
                     <input type="text" value="" placeholder="Name">
@@ -106,7 +126,8 @@
 
         </nav>
     </footer>
-
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 </html>
